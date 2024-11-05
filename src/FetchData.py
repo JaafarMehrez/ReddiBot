@@ -28,7 +28,6 @@ def fetch_top_posts(subreddit_list='SubredditName', limit=1000, time_filter='all
 
 posts_df = fetch_top_posts(subreddit_list='SubredditName', limit=1000, time_filter='all')
 posts_df.to_csv('subredd_posts.csv', header=True, index=False)
-posts_df
 
 # Fetch Comments from Posts
 comments_list = []
@@ -42,4 +41,3 @@ for post_id in posts_df['post_id']:
                               'comment': comment.body})
 comments_df = pd.DataFrame(comments_list)
 comments_df.to_csv('subredd_comments.csv', header=True, index=False)
-comments_df
